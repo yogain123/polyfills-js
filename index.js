@@ -14,7 +14,7 @@ Array.prototype.some = function(fn, acc) {
   return false;
 };
 
-//polyfill for 'reduce' function
+//polyfill for 'reduce'
 Array.prototype.reduce = function(fn, acc = 0) {
   let result;
   for (let i = 0; i < this.length; i++) {
@@ -24,19 +24,21 @@ Array.prototype.reduce = function(fn, acc = 0) {
   return result;
 };
 
-//polyfill for 'async forEach' function
+//polyfill for 'async forEach'
 Array.prototype.asyncForEach = async function(fn) {
   for (let i = 0; i < this.length; i++) {
     await fn(this[i], i, this);
   }
 };
 
-Function.prototype.myBind = function(data) {
-  return (age1, age2) => {
-    return this.call(data, age1, age2);
+//polyfill for 'bind'
+Function.prototype.bind = function(data) {
+  return (..rest) => {
+    return this.apply(data, rest);
   };
 };
 
-Function.prototype.myCall = function(data, ...rest) {
+//polyfill for 'call'
+Function.prototype.call = function(data, ...rest) {
   return this.apply(data, rest);
 };
