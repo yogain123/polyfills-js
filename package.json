@@ -1,0 +1,15 @@
+{
+  "name": "polyfills",
+  "version": "2.0.0",
+  "description": "async forEach polyfills",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "polyfills",
+    "javascript"
+  ],
+  "author": "yogendra saxena",
+  "license": "ISC"
+}
