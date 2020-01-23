@@ -30,3 +30,25 @@ Array.prototype.asyncForEach = async function(fn) {
     await fn(this[i], i, this);
   }
 };
+
+Array.prototype.sort = function(order) {
+  //bubble sort
+  for (let i = 0; i < this.length; i++) {
+    for (let j = 0; j < this.length - 1; j++) {
+      if (order === 1 && this[j] > this[j + 1])
+        [this[j], this[j + 1]] = [this[j + 1], this[j]];
+      if (order === -1 && this[j] < this[j + 1])
+        [this[j], this[j + 1]] = [this[j + 1], this[j]];
+    }
+  }
+  return this;
+};
+
+/**
+ * let arr = [2, 1, 3, 4, 5, 6, 1];
+  arr.sort(1); // 1 for ascending and -1 for descending
+  console.log(arr);
+  arr.sort(-1);
+  console.log(arr);
+ * 
+ */
