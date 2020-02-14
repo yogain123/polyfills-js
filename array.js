@@ -6,6 +6,16 @@ Array.prototype.every = function(fn) {
   return true;
 };
 
+
+//polyfill for map
+Array.prototype.map = function(fn){
+    let result = [];
+    for (const item of this) {
+        result.push(fn(item))
+    }
+    return result
+}
+
 //polyfill for 'some'
 Array.prototype.some = function(fn, acc) {
   for (const item of this) {
