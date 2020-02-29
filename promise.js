@@ -11,7 +11,7 @@ let p3 = new Promise((resolve, reject) => {
 });
 
 
-//Promise.settleAll polyfill
+//Promise.allSettled polyfill
 Promise.allSettledPolyFill = async function(promiseArr) {
     let resarr = [];
     let counter = 0;
