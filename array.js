@@ -34,6 +34,18 @@ Array.prototype.reduce = function(fn, acc = 0) {
   return result;
 };
 
+//polyfill for filter
+Array.prototype.filter = function(fn) {
+    let res = [];
+    for (const item of this) {
+        if(fn(item)){
+            res.push(item)
+        }
+    }
+    return res;
+}
+
+
 //polyfill for 'async forEach' function
 Array.prototype.asyncForEach = async function(fn) {
   for (let i = 0; i < this.length; i++) {
